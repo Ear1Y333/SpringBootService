@@ -1,8 +1,12 @@
 package org.tt.springbootservice.services;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.tt.springbootservice.models.QuadraticEquationDao;
+
 public class SoapRequestBuilder {
 
-    public static String buildSolveEquationRequest(double a, double b, double c) {
-        return "<request><a>" + a + "</a><b>" + b + "</b><c>" + c +"</c></request>";
+    public static String buildSolveEquationRequest(QuadraticEquationDao quadraticEquationDao) {
+        return "<request><a>" + quadraticEquationDao.getA() + "</a><b>" + quadraticEquationDao.getB() + "</b><c>" + quadraticEquationDao.getC() +"</c></request>";
     }
 }

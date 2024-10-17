@@ -1,4 +1,4 @@
-package org.tt.springbootservice.exceptions;
+package org.tt.springbootservice.advice;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -9,7 +9,6 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 public class CustomSoapClient {
-
     private final RestTemplate restTemplate;
 
     public CustomSoapClient() {
@@ -20,10 +19,8 @@ public class CustomSoapClient {
         HttpHeaders headers = new HttpHeaders();
         headers.set("Content-Type", "text/xml");
         headers.set("SOAPAction", "solveEquation");
-
         HttpEntity<String> request = new HttpEntity<>(xmlRequest, headers);
         ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, request, String.class);
-
         return response.getBody();
     }
 }
