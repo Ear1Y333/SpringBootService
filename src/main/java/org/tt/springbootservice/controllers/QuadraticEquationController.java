@@ -1,7 +1,6 @@
 package org.tt.springbootservice.controllers;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,9 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.tt.springbootservice.models.QuadraticEquationDao;
-import org.tt.springbootservice.services.CustomSoapClient;
 import org.tt.springbootservice.services.EquationClient;
-import org.tt.springbootservice.services.SoapRequestBuilder;
 
 @RestController
 @RequestMapping("api")
@@ -19,7 +16,6 @@ import org.tt.springbootservice.services.SoapRequestBuilder;
 public class QuadraticEquationController {
 
     private final EquationClient equationClient;
-
     /*
         Получение данных из ссылки считается плохой практикой,
         я бы использовал RequestBody в post-запросе,

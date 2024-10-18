@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.tt.springbootservice.models.QuadraticEquationDao;
+import org.tt.springbootservice.models.Request;
 
 @Service
 public class EquationClient {
@@ -21,7 +22,7 @@ public class EquationClient {
     }
 
     public String solveEquation(QuadraticEquationDao quadraticEquationDao) {
-        String soapRequest = SoapRequestBuilder.buildSolveEquationRequest(quadraticEquationDao);
+        String soapRequest = Request.getXmlValue(quadraticEquationDao);
 
         logger.info("Sending SOAP request to URL: {}", soapServiceUrl);
         logger.info("SOAP request: {}", soapRequest);
